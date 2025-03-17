@@ -1,0 +1,7 @@
+- id: git-autosquash-check
+  name: git-autosquash-check
+  language: script
+  entry: git-autosquash-check.bash
+  always_run: true
+  pass_filenames: false
+  stages: [pre-push]
