@@ -20,7 +20,10 @@ main() {
   git log --oneline @{upstream}..HEAD | grep -Ee "$patt"
 
   # Invert the grep exit status.
-  return $(($? != 0))
+  if [[ $? == 0 ]]; then
+    return 1
+  fi
+  return 0
 }
 
 require() {
